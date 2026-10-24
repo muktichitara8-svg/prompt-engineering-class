@@ -2,121 +2,404 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My Online Store</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Mukti's Market | Online Store</title>
 
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            margin: 0;
-            text-align: center;
-            background: #f5f5f5;
-        }
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
 
-        header {
-            background: #222;
-            color: white;
-            padding: 25px;
-        }
+body {
+    font-family: Arial, sans-serif;
+    background: #faf8f4;
+    color: #222;
+}
 
-        nav {
-            background: #444;
-            padding: 12px;
-        }
+header {
+    background: #171717;
+    color: white;
+    padding: 20px 7%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 15px;
+}
 
-        nav a {
-            color: white;
-            margin: 15px;
-            text-decoration: none;
-        }
+.logo {
+    font-family: Georgia, serif;
+    font-size: 27px;
+    color: #e6c17a;
+}
 
-        .products {
-            display: flex;
-            justify-content: center;
-            gap: 20px;
-            flex-wrap: wrap;
-            padding: 30px;
-        }
+nav a {
+    color: white;
+    text-decoration: none;
+    margin: 0 10px;
+}
 
-        .product {
-            background: white;
-            padding: 20px;
-            width: 200px;
-            border-radius: 10px;
-        }
+nav a:hover {
+    color: #e6c17a;
+}
 
-        button {
-            background: #168a50;
-            color: white;
-            padding: 10px;
-            border: none;
-            cursor: pointer;
-            border-radius: 5px;
-        }
+.hero {
+    padding: 75px 8%;
+    background: linear-gradient(120deg, #f2e6d2, #fffaf2);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 30px;
+    flex-wrap: wrap;
+}
 
-        footer {
-            background: #222;
-            color: white;
-            padding: 15px;
-        }
-    </style>
+.hero-text {
+    flex: 1;
+    min-width: 250px;
+}
+
+.hero h1 {
+    font-family: Georgia, serif;
+    font-size: clamp(36px, 5vw, 55px);
+    margin-bottom: 20px;
+}
+
+.hero p {
+    font-size: 17px;
+    line-height: 1.7;
+    margin-bottom: 25px;
+}
+
+.hero img {
+    width: 42%;
+    min-width: 260px;
+    border-radius: 15px;
+    object-fit: cover;
+}
+
+.btn {
+    display: inline-block;
+    background: #171717;
+    color: white;
+    padding: 13px 23px;
+    border: none;
+    border-radius: 7px;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.btn:hover {
+    background: #b48a42;
+}
+
+.features {
+    display: flex;
+    justify-content: space-around;
+    gap: 20px;
+    padding: 25px 5%;
+    background: white;
+    flex-wrap: wrap;
+    text-align: center;
+}
+
+.features p {
+    margin: 8px;
+    color: #666;
+}
+
+.products-section {
+    padding: 50px 7%;
+}
+
+.section-heading {
+    margin-bottom: 25px;
+}
+
+.section-heading h2 {
+    font-family: Georgia, serif;
+    font-size: 32px;
+    margin-bottom: 10px;
+}
+
+.search {
+    width: 100%;
+    max-width: 400px;
+    padding: 12px;
+    border: 1px solid #ddd;
+    border-radius: 7px;
+    margin-top: 15px;
+    font-size: 15px;
+}
+
+.products {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
+    gap: 22px;
+}
+
+.product {
+    background: white;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 3px 15px #00000010;
+    transition: transform 0.2s;
+}
+
+.product:hover {
+    transform: translateY(-5px);
+}
+
+.product img {
+    width: 100%;
+    height: 220px;
+    object-fit: cover;
+}
+
+.product-info {
+    padding: 16px;
+}
+
+.product-info h3 {
+    margin-bottom: 10px;
+}
+
+.price {
+    font-size: 19px;
+    font-weight: bold;
+    margin: 12px 0;
+}
+
+.seller {
+    color: #777;
+    font-size: 13px;
+}
+
+.product .btn {
+    width: 100%;
+    margin-top: 8px;
+}
+
+.seller-section {
+    background: #202020;
+    color: white;
+    padding: 45px 8%;
+    text-align: center;
+}
+
+.seller-section h2 {
+    font-family: Georgia, serif;
+    font-size: 32px;
+    margin-bottom: 15px;
+}
+
+.seller-section p {
+    margin-bottom: 22px;
+    line-height: 1.6;
+}
+
+.seller-section .btn {
+    background: #e6c17a;
+    color: #171717;
+    font-weight: bold;
+}
+
+footer {
+    background: #111;
+    color: white;
+    text-align: center;
+    padding: 25px;
+    line-height: 2;
+}
+
+@media (max-width: 600px) {
+    header {
+        justify-content: center;
+        text-align: center;
+    }
+
+    nav a {
+        display: inline-block;
+        margin: 8px;
+    }
+
+    .hero {
+        padding: 45px 7%;
+    }
+
+    .hero img {
+        width: 100%;
+    }
+}
+</style>
 </head>
 
 <body>
 
-    <header>
-        <h1>My Online Store</h1>
-        <p>Quality Products, Best Prices!</p>
-    </header>
+<header>
+    <div class="logo">✦ Mukti's Market</div>
 
     <nav>
         <a href="#home">Home</a>
         <a href="#products">Products</a>
+        <a href="#seller">For Sellers</a>
         <a href="#contact">Contact</a>
     </nav>
 
-    <section id="home">
-        <h2>Welcome to Our Store!</h2>
-        <p>Discover amazing products at affordable prices.</p>
-    </section>
+    <div>🛒 Cart: <span id="cart">0</span></div>
+</header>
 
-    <section id="products">
-        <h2>Our Products</h2>
+<section class="hero" id="home">
+    <div class="hero-text">
+        <p style="color:#a47a35;">DISCOVER • SHOP • GROW</p>
+        <h1>Small Business.<br>Big Dreams.</h1>
+        <p>
+            Discover beautiful products at great prices.
+            Shop your favourites and support small businesses.
+        </p>
+        <a href="#products" class="btn">Explore Products →</a>
+    </div>
 
-        <div class="products">
-            <div class="product">
-                <h3>Stylish Bag</h3>
-                <p>Price: ₹499</p>
-                <button onclick="order('Stylish Bag')">
-                    Order Now
-                </button>
-            </div>
+    <img
+      src="https://images.unsplash.com/photo-1607082349566-187342175e2f?auto=format&fit=crop&w=900&q=80"
+      alt="Shopping and gift products">
+</section>
 
-            <div class="product">
-                <h3>Smart Watch</h3>
-                <p>Price: ₹999</p>
-                <button onclick="order('Smart Watch')">
-                    Order Now
-                </button>
+<section class="features">
+    <div>
+        <h3>🚚 Easy Shopping</h3>
+        <p>Explore your favourites</p>
+    </div>
+    <div>
+        <h3>✨ Quality Products</h3>
+        <p>Handpicked collections</p>
+    </div>
+    <div>
+        <h3>🤝 Support Sellers</h3>
+        <p>Grow small businesses</p>
+    </div>
+</section>
+
+<section class="products-section" id="products">
+    <div class="section-heading">
+        <h2>Featured Products</h2>
+        <p>Explore our latest collection.</p>
+
+        <input
+            class="search"
+            id="search"
+            type="text"
+            placeholder="Search products..."
+            oninput="searchProducts()">
+    </div>
+
+    <div class="products" id="productList">
+
+        <div class="product" data-name="tote bag">
+            <img src="https://images.unsplash.com/photo-1590874103328-eac38a683ce7?auto=format&fit=crop&w=600&q=80"
+                 alt="Stylish handbag">
+            <div class="product-info">
+                <h3>Stylish Tote Bag</h3>
+                <p class="seller">By: Your Store</p>
+                <p class="price">₹499</p>
+                <button class="btn" onclick="addToCart()">Add to Cart</button>
             </div>
         </div>
-    </section>
 
-    <section id="contact">
-        <h2>Contact Us</h2>
-        <p>Email: mybusiness@example.com</p>
-    </section>
+        <div class="product" data-name="jewellery earrings">
+            <img src="https://images.unsplash.com/photo-1535632066927-ab7c9ab60908?auto=format&fit=crop&w=600&q=80"
+                 alt="Fashion jewellery">
+            <div class="product-info">
+                <h3>Elegant Jewellery</h3>
+                <p class="seller">By: Your Store</p>
+                <p class="price">₹299</p>
+                <button class="btn" onclick="addToCart()">Add to Cart</button>
+            </div>
+        </div>
 
-    <footer>
-        <p>© 2026 My Online Store</p>
-    </footer>
+        <div class="product" data-name="candle home decor">
+            <img src="https://images.unsplash.com/photo-1603006905003-be475563bc59?auto=format&fit=crop&w=600&q=80"
+                 alt="Decorative candle">
+            <div class="product-info">
+                <h3>Aromatic Candle</h3>
+                <p class="seller">By: Your Store</p>
+                <p class="price">₹399</p>
+                <button class="btn" onclick="addToCart()">Add to Cart</button>
+            </div>
+        </div>
 
-    <script>
-        function order(product) {
-            alert("You selected: " + product);
-        }
-    </script>
+        <div class="product" data-name="notebook stationery">
+            <img src="https://images.unsplash.com/photo-1531346878377-a5be20888e57?auto=format&fit=crop&w=600&q=80"
+                 alt="Notebook and stationery">
+            <div class="product-info">
+                <h3>Creative Notebook</h3>
+                <p class="seller">By: Your Store</p>
+                <p class="price">₹199</p>
+                <button class="btn" onclick="addToCart()">Add to Cart</button>
+            </div>
+        </div>
+
+    </div>
+    <p id="noResults" style="display:none; margin-top:20px;">
+        No products found.
+    </p>
+</section>
+
+<section class="seller-section" id="seller">
+    <h2>Are You a Business Owner?</h2>
+    <p>
+        Showcase your products and grow your business.
+        Join our community of creative entrepreneurs!
+    </p>
+    <button class="btn" onclick="becomeSeller()">
+        Become a Seller →
+    </button>
+</section>
+
+<footer id="contact">
+    <h3 class="logo">✦ Mukti's Market</h3>
+    <p>Your products, our priority.</p>
+    <p>Contact: yourbusiness@example.com</p>
+    <p>© 2026 Mukti's Market. All rights reserved.</p>
+</footer>
+
+<script>
+let cartCount = 0;
+
+function addToCart() {
+    cartCount++;
+    document.getElementById("cart").textContent = cartCount;
+    alert("Product added to your cart!");
+}
+
+function searchProducts() {
+    const query = document.getElementById("search")
+        .value.toLowerCase().trim();
+
+    const products = document.querySelectorAll(".product");
+    let visibleCount = 0;
+
+    products.forEach(function(product) {
+        const name = product.dataset.name;
+        const title = product.querySelector("h3").textContent;
+        const matches = (name + " " + title)
+            .toLowerCase().includes(query);
+
+        product.style.display = matches ? "block" : "none";
+
+        if (matches) visibleCount++;
+    });
+
+    document.getElementById("noResults").style.display =
+        visibleCount === 0 ? "block" : "none";
+}
+
+function becomeSeller() {
+    alert("Welcome! Contact us to start selling your products.");
+}
+</script>
 
 </body>
 </html>
