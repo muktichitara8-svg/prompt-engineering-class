@@ -1,405 +1,515 @@
-
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Mukti's Market | Online Store</title>
-
-<style>
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-
-body {
-    font-family: Arial, sans-serif;
-    background: #faf8f4;
-    color: #222;
-}
-
-header {
-    background: #171717;
-    color: white;
-    padding: 20px 7%;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    flex-wrap: wrap;
-    gap: 15px;
-}
-
-.logo {
-    font-family: Georgia, serif;
-    font-size: 27px;
-    color: #e6c17a;
-}
-
-nav a {
-    color: white;
-    text-decoration: none;
-    margin: 0 10px;
-}
-
-nav a:hover {
-    color: #e6c17a;
-}
-
-.hero {
-    padding: 75px 8%;
-    background: linear-gradient(120deg, #f2e6d2, #fffaf2);
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    gap: 30px;
-    flex-wrap: wrap;
-}
-
-.hero-text {
-    flex: 1;
-    min-width: 250px;
-}
-
-.hero h1 {
-    font-family: Georgia, serif;
-    font-size: clamp(36px, 5vw, 55px);
-    margin-bottom: 20px;
-}
-
-.hero p {
-    font-size: 17px;
-    line-height: 1.7;
-    margin-bottom: 25px;
-}
-
-.hero img {
-    width: 42%;
-    min-width: 260px;
-    border-radius: 15px;
-    object-fit: cover;
-}
-
-.btn {
-    display: inline-block;
-    background: #171717;
-    color: white;
-    padding: 13px 23px;
-    border: none;
-    border-radius: 7px;
-    text-decoration: none;
-    cursor: pointer;
-}
-
-.btn:hover {
-    background: #b48a42;
-}
-
-.features {
-    display: flex;
-    justify-content: space-around;
-    gap: 20px;
-    padding: 25px 5%;
-    background: white;
-    flex-wrap: wrap;
-    text-align: center;
-}
-
-.features p {
-    margin: 8px;
-    color: #666;
-}
-
-.products-section {
-    padding: 50px 7%;
-}
-
-.section-heading {
-    margin-bottom: 25px;
-}
-
-.section-heading h2 {
-    font-family: Georgia, serif;
-    font-size: 32px;
-    margin-bottom: 10px;
-}
-
-.search {
-    width: 100%;
-    max-width: 400px;
-    padding: 12px;
-    border: 1px solid #ddd;
-    border-radius: 7px;
-    margin-top: 15px;
-    font-size: 15px;
-}
-
-.products {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
-    gap: 22px;
-}
-
-.product {
-    background: white;
-    border-radius: 12px;
-    overflow: hidden;
-    box-shadow: 0 3px 15px #00000010;
-    transition: transform 0.2s;
-}
-
-.product:hover {
-    transform: translateY(-5px);
-}
-
-.product img {
-    width: 100%;
-    height: 220px;
-    object-fit: cover;
-}
-
-.product-info {
-    padding: 16px;
-}
-
-.product-info h3 {
-    margin-bottom: 10px;
-}
-
-.price {
-    font-size: 19px;
-    font-weight: bold;
-    margin: 12px 0;
-}
-
-.seller {
-    color: #777;
-    font-size: 13px;
-}
-
-.product .btn {
-    width: 100%;
-    margin-top: 8px;
-}
-
-.seller-section {
-    background: #202020;
-    color: white;
-    padding: 45px 8%;
-    text-align: center;
-}
-
-.seller-section h2 {
-    font-family: Georgia, serif;
-    font-size: 32px;
-    margin-bottom: 15px;
-}
-
-.seller-section p {
-    margin-bottom: 22px;
-    line-height: 1.6;
-}
-
-.seller-section .btn {
-    background: #e6c17a;
-    color: #171717;
-    font-weight: bold;
-}
-
-footer {
-    background: #111;
-    color: white;
-    text-align: center;
-    padding: 25px;
-    line-height: 2;
-}
-
-@media (max-width: 600px) {
-    header {
-        justify-content: center;
-        text-align: center;
-    }
-
-    nav a {
-        display: inline-block;
-        margin: 8px;
-    }
-
-    .hero {
-        padding: 45px 7%;
-    }
-
-    .hero img {
-        width: 100%;
-    }
-}
-</style>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="LeakLens – Check if your email has appeared in known data breaches. Demo version with simulated results." />
+  <title>LeakLens – Email Data Breach Checker</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Space+Grotesk:wght@600;700&display=swap" rel="stylesheet" />
 </head>
 
 <body>
 
-<header>
-    <div class="logo">✦ Mukti's Market</div>
+  <!-- ========== NAVBAR ========== -->
+  <nav class="navbar" id="navbar">
+    <div class="nav-inner">
+      <a href="#" class="nav-brand">
+        <div class="nav-logo">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+          </svg>
+        </div>
+        LeakLens
+      </a>
 
-    <nav>
-        <a href="#home">Home</a>
-        <a href="#products">Products</a>
-        <a href="#seller">For Sellers</a>
-        <a href="#contact">Contact</a>
-    </nav>
+      <ul class="nav-links">
+        <li><a href="#home"   class="nav-link active">Home</a></li>
+        <li><a href="#check"  class="nav-link">Check Email</a></li>
+        <li><a href="#tips"   class="nav-link">Security Tips</a></li>
+        <li><a href="#login-section" class="nav-link">Login</a></li>
+      </ul>
 
-    <div>🛒 Cart: <span id="cart">0</span></div>
-</header>
+      <button class="hamburger" id="hamburger" aria-label="Open menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
 
-<section class="hero" id="home">
-    <div class="hero-text">
-        <p style="color:#a47a35;">DISCOVER • SHOP • GROW</p>
-        <h1>Small Business.<br>Big Dreams.</h1>
-        <p>
-            Discover beautiful products at great prices.
-            Shop your favourites and support small businesses.
+    <!-- Mobile menu -->
+    <div class="mobile-menu" id="mobileMenu">
+      <a href="#home"          class="mob-link" onclick="closeMobileMenu()">Home</a>
+      <a href="#check"         class="mob-link" onclick="closeMobileMenu()">Check Email</a>
+      <a href="#tips"          class="mob-link" onclick="closeMobileMenu()">Security Tips</a>
+      <a href="#login-section" class="mob-link" onclick="closeMobileMenu()">Login</a>
+    </div>
+  </nav>
+
+
+  <!-- ========== HERO SECTION ========== -->
+  <section class="hero" id="home">
+    <div class="hero-glow hero-glow-left"></div>
+    <div class="hero-glow hero-glow-right"></div>
+
+    <div class="container hero-inner">
+
+      <!-- Left: Text + Form -->
+      <div class="hero-text">
+        <span class="hero-badge">
+          <svg width="12" height="12" viewBox="0 0 24 24" fill="currentColor"><circle cx="12" cy="12" r="10"/></svg>
+          Demo Mode · No Real API Connected
+        </span>
+
+        <h1 class="hero-title">
+          Is Your Email
+          <span class="gradient-text"> Leaking</span>
+          <br>Online?
+        </h1>
+
+        <p class="hero-sub">
+          LeakLens checks if your email appears in known data breaches.
+          Enter your email below to see a demonstration of results.
         </p>
-        <a href="#products" class="btn">Explore Products →</a>
-    </div>
 
-    <img
-      src="https://images.unsplash.com/photo-1607082349566-187342175e2f?auto=format&fit=crop&w=900&q=80"
-      alt="Shopping and gift products">
-</section>
-
-<section class="features">
-    <div>
-        <h3>🚚 Easy Shopping</h3>
-        <p>Explore your favourites</p>
-    </div>
-    <div>
-        <h3>✨ Quality Products</h3>
-        <p>Handpicked collections</p>
-    </div>
-    <div>
-        <h3>🤝 Support Sellers</h3>
-        <p>Grow small businesses</p>
-    </div>
-</section>
-
-<section class="products-section" id="products">
-    <div class="section-heading">
-        <h2>Featured Products</h2>
-        <p>Explore our latest collection.</p>
-
-        <input
-            class="search"
-            id="search"
-            type="text"
-            placeholder="Search products..."
-            oninput="searchProducts()">
-    </div>
-
-    <div class="products" id="productList">
-
-        <div class="product" data-name="tote bag">
-            <img src="https://images.unsplash.com/photo-1590874103328-eac38a683ce7?auto=format&fit=crop&w=600&q=80"
-                 alt="Stylish handbag">
-            <div class="product-info">
-                <h3>Stylish Tote Bag</h3>
-                <p class="seller">By: Your Store</p>
-                <p class="price">₹499</p>
-                <button class="btn" onclick="addToCart()">Add to Cart</button>
-            </div>
+        <!-- PRIVACY NOTICE -->
+        <div class="notice notice-info" id="privacyNotice">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
+          <div>
+            <strong>Privacy Notice (Demo):</strong> In this demo, your email is
+            <em>not</em> sent anywhere. Results shown are simulated for demonstration.
+            A real version would send your email to a breach-check API.
+          </div>
         </div>
 
-        <div class="product" data-name="jewellery earrings">
-            <img src="https://images.unsplash.com/photo-1535632066927-ab7c9ab60908?auto=format&fit=crop&w=600&q=80"
-                 alt="Fashion jewellery">
-            <div class="product-info">
-                <h3>Elegant Jewellery</h3>
-                <p class="seller">By: Your Store</p>
-                <p class="price">₹299</p>
-                <button class="btn" onclick="addToCart()">Add to Cart</button>
-            </div>
-        </div>
+        <!-- EMAIL FORM -->
+        <form class="email-form" id="emailForm" onsubmit="handleCheck(event)">
+          <div class="input-wrap">
+            <svg class="input-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/>
+            </svg>
+            <input
+              type="email"
+              id="emailInput"
+              class="email-input"
+              placeholder="Enter your email address…"
+              autocomplete="email"
+              required
+            />
+          </div>
 
-        <div class="product" data-name="candle home decor">
-            <img src="https://images.unsplash.com/photo-1603006905003-be475563bc59?auto=format&fit=crop&w=600&q=80"
-                 alt="Decorative candle">
-            <div class="product-info">
-                <h3>Aromatic Candle</h3>
-                <p class="seller">By: Your Store</p>
-                <p class="price">₹399</p>
-                <button class="btn" onclick="addToCart()">Add to Cart</button>
-            </div>
-        </div>
+          <!-- Consent -->
+          <label class="consent-label">
+            <input type="checkbox" id="consentBox" />
+            <span>I understand this is a demo. No real data is transmitted.</span>
+          </label>
 
-        <div class="product" data-name="notebook stationery">
-            <img src="https://images.unsplash.com/photo-1531346878377-a5be20888e57?auto=format&fit=crop&w=600&q=80"
-                 alt="Notebook and stationery">
-            <div class="product-info">
-                <h3>Creative Notebook</h3>
-                <p class="seller">By: Your Store</p>
-                <p class="price">₹199</p>
-                <button class="btn" onclick="addToCart()">Add to Cart</button>
-            </div>
+          <!-- Inline error -->
+          <div class="field-error" id="formError" hidden></div>
+
+          <button type="submit" class="btn btn-primary btn-full" id="checkBtn">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+              <circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/>
+            </svg>
+            Check My Email
+          </button>
+        </form>
+
+        <p class="hero-attr">
+          A real integration would use the free
+          <a href="https://xposedornot.com/api_doc" target="_blank" rel="noopener">XposedOrNot API</a>.
+          Results would cover only breaches known to that provider.
+        </p>
+      </div>
+
+      <!-- Right: Animated Shield -->
+      <div class="hero-visual">
+        <div class="shield-rings">
+          <div class="ring ring-1"></div>
+          <div class="ring ring-2"></div>
+          <div class="ring ring-3"></div>
         </div>
+        <div class="shield-core">
+          <svg width="64" height="64" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+          </svg>
+        </div>
+        <!-- Floating labels -->
+        <div class="float-tag float-tag-1">🔒 Encrypted Check</div>
+        <div class="float-tag float-tag-2">⚡ Instant Results</div>
+        <div class="float-tag float-tag-3">🛡️ Privacy First</div>
+      </div>
 
     </div>
-    <p id="noResults" style="display:none; margin-top:20px;">
-        No products found.
-    </p>
-</section>
+  </section>
 
-<section class="seller-section" id="seller">
-    <h2>Are You a Business Owner?</h2>
-    <p>
-        Showcase your products and grow your business.
-        Join our community of creative entrepreneurs!
-    </p>
-    <button class="btn" onclick="becomeSeller()">
-        Become a Seller →
-    </button>
-</section>
 
-<footer id="contact">
-    <h3 class="logo">✦ Mukti's Market</h3>
-    <p>Your products, our priority.</p>
-    <p>Contact: yourbusiness@example.com</p>
-    <p>© 2026 Mukti's Market. All rights reserved.</p>
-</footer>
+  <!-- ========== SCANNING OVERLAY ========== -->
+  <div class="scan-overlay" id="scanOverlay" hidden>
+    <div class="scan-card">
+      <div class="scan-shield">
+        <div class="scan-ring"></div>
+        <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+        </svg>
+      </div>
 
-<script>
-let cartCount = 0;
+      <div class="scan-bar-wrap">
+        <div class="scan-bar" id="scanBar"></div>
+      </div>
 
-function addToCart() {
-    cartCount++;
-    document.getElementById("cart").textContent = cartCount;
-    alert("Product added to your cart!");
-}
+      <p class="scan-msg" id="scanMsg">Initialising scanner…</p>
 
-function searchProducts() {
-    const query = document.getElementById("search")
-        .value.toLowerCase().trim();
+      <div class="scan-dots">
+        <span></span><span></span><span></span>
+      </div>
 
-    const products = document.querySelectorAll(".product");
-    let visibleCount = 0;
+      <button class="btn btn-ghost btn-sm" onclick="cancelScan()">✕ Cancel</button>
+    </div>
+  </div>
 
-    products.forEach(function(product) {
-        const name = product.dataset.name;
-        const title = product.querySelector("h3").textContent;
-        const matches = (name + " " + title)
-            .toLowerCase().includes(query);
 
-        product.style.display = matches ? "block" : "none";
+  <!-- ========== RESULTS SECTION ========== -->
+  <section class="results-section" id="results" hidden>
+    <div class="container" style="max-width:760px">
 
-        if (matches) visibleCount++;
-    });
+      <!-- Result header card -->
+      <div class="result-header-card" id="resultHeaderCard">
+        <div class="result-icon" id="resultIcon"></div>
+        <div class="result-email-badge" id="resultEmailBadge"></div>
+        <h2 class="result-title" id="resultTitle"></h2>
+        <p class="result-sub"  id="resultSub"></p>
+        <div class="result-meta" id="resultMeta"></div>
+      </div>
 
-    document.getElementById("noResults").style.display =
-        visibleCount === 0 ? "block" : "none";
-}
+      <!-- Breach list (only shown if breaches found) -->
+      <div id="breachListWrap" hidden>
+        <div class="breach-list-header">
+          <h3>⚠️ Breaches Detected</h3>
+          <span class="badge badge-danger" id="breachCount"></span>
+        </div>
+        <div class="breach-grid" id="breachGrid"></div>
 
-function becomeSeller() {
-    alert("Welcome! Contact us to start selling your products.");
-}
-</script>
+        <!-- What to do -->
+        <div class="action-card">
+          <h4>🔒 What You Should Do</h4>
+          <ol class="action-list">
+            <li>Change the password for every service listed above immediately.</li>
+            <li>Use a unique password for each website — never reuse passwords.</li>
+            <li>Enable two-factor authentication (2FA) on those accounts.</li>
+            <li>Watch for phishing emails pretending to be those services.</li>
+            <li>Use a password manager like <strong>Bitwarden</strong> (free).</li>
+          </ol>
+        </div>
+      </div>
 
+      <!-- Disclaimer always shown -->
+      <div class="notice notice-warning" style="margin-top:24px">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M10.29 3.86L1.82 18a2 2 0 001.71 3h16.94a2 2 0 001.71-3L13.71 3.86a2 2 0 00-3.42 0z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>
+        <div>
+          <strong>Demo Disclaimer:</strong> The results above are <em>simulated</em> and do
+          <em>not</em> reflect real breach data. A live version would call the
+          <a href="https://xposedornot.com" target="_blank" rel="noopener">XposedOrNot API</a>
+          and show actual results. No breach found in a real check does not mean your email is 100% safe.
+        </div>
+      </div>
+
+      <!-- Action buttons -->
+      <div class="result-actions">
+        <button class="btn btn-primary" onclick="resetChecker()">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="1 4 1 10 7 10"/><path d="M3.51 15a9 9 0 1 0 .49-3.41"/></svg>
+          Check Another Email
+        </button>
+        <a href="#tips" class="btn btn-outline">
+          Security Tips →
+        </a>
+      </div>
+
+    </div>
+  </section>
+
+
+  <!-- ========== FEATURES SECTION ========== -->
+  <section class="features-section" id="check">
+    <div class="container">
+      <div class="section-header">
+        <h2>Why Use <span class="gradient-text">LeakLens</span>?</h2>
+        <p>Simple, transparent, and completely free. No account required. No password asked.</p>
+      </div>
+
+      <div class="features-grid">
+
+        <div class="feature-card">
+          <div class="feature-icon" style="--icon-color:#4f8ef7">
+            <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg>
+          </div>
+          <h3>Instant Results</h3>
+          <p>Get breach detection results in seconds using a comprehensive database of exposed records.</p>
+        </div>
+
+        <div class="feature-card">
+          <div class="feature-icon" style="--icon-color:#a855f7">
+            <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
+          </div>
+          <h3>Privacy First</h3>
+          <p>We never ask for your password or mailbox access. Only your email is used for lookup.</p>
+        </div>
+
+        <div class="feature-card">
+          <div class="feature-icon" style="--icon-color:#2dd4bf">
+            <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg>
+          </div>
+          <h3>Know Your Exposure</h3>
+          <p>See which breaches contain your email so you know exactly where to update your passwords.</p>
+        </div>
+
+        <div class="feature-card">
+          <div class="feature-icon" style="--icon-color:#f97316">
+            <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+          </div>
+          <h3>No Account Needed</h3>
+          <p>Just enter your email and check. No registration, no subscription, no payment required.</p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ========== STATS BAR ========== -->
+  <div class="stats-bar">
+    <div class="container stats-inner">
+      <div class="stat-item"><span class="stat-val">11B+</span><span class="stat-lbl">Records in Database</span></div>
+      <div class="stat-item"><span class="stat-val">Free</span><span class="stat-lbl">No Account Needed</span></div>
+      <div class="stat-item"><span class="stat-val">100%</span><span class="stat-lbl">No Password Asked</span></div>
+      <div class="stat-item"><span class="stat-val">Live</span><span class="stat-lbl">API Data (Real Version)</span></div>
+    </div>
+  </div>
+
+
+  <!-- ========== SECURITY TIPS SECTION ========== -->
+  <section class="tips-section" id="tips">
+    <div class="container" style="max-width:800px">
+      <div class="section-header">
+        <div class="section-icon">
+          <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+        </div>
+        <h2>Stay <span class="gradient-text">Secure</span> Online</h2>
+        <p>Practical tips to protect your accounts — especially if your email appeared in a breach.</p>
+      </div>
+
+      <div class="tips-list">
+
+        <div class="tip-card" style="--tip-color:#4f8ef7">
+          <div class="tip-icon">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 2l-2 2m-7.61 7.61a5.5 5.5 0 1 1-7.778 7.778 5.5 5.5 0 0 1 7.777-7.777zm0 0L15.5 7.5m0 0l3 3L22 7l-3-3m-3.5 3.5L19 4"/></svg>
+          </div>
+          <div class="tip-content">
+            <div class="tip-head">
+              <h3>Use Unique Passwords</h3>
+              <span class="tip-badge">Passwords</span>
+            </div>
+            <ul>
+              <li>Never reuse the same password on two different websites.</li>
+              <li>A strong password has 12+ characters, numbers, symbols, and mixed case.</li>
+              <li>Use a password manager like <strong>Bitwarden</strong> (free &amp; open source).</li>
+              <li>If one site is breached, unique passwords keep your other accounts safe.</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="tip-card" style="--tip-color:#a855f7">
+          <div class="tip-icon">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="2" width="14" height="20" rx="2" ry="2"/><line x1="12" y1="18" x2="12.01" y2="18"/></svg>
+          </div>
+          <div class="tip-content">
+            <div class="tip-head">
+              <h3>Enable Two-Factor Authentication (2FA)</h3>
+              <span class="tip-badge">2FA</span>
+            </div>
+            <ul>
+              <li>2FA adds a second step to login — like a code sent to your phone.</li>
+              <li>Even with your password stolen, attackers cannot log in without your device.</li>
+              <li>Use an authenticator app (Google Authenticator, Authy) — safer than SMS.</li>
+              <li>Enable 2FA on email, banking, and social media accounts first.</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="tip-card" style="--tip-color:#f97316">
+          <div class="tip-icon">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 3a3 3 0 0 0-3 3v12a3 3 0 0 0 3 3 3 3 0 0 0 3-3 3 3 0 0 0-3-3H6a3 3 0 0 0-3 3 3 3 0 0 0 3 3 3 3 0 0 0 3-3V6a3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3h12a3 3 0 0 0 3-3 3 3 0 0 0-3-3z"/></svg>
+          </div>
+          <div class="tip-content">
+            <div class="tip-head">
+              <h3>Recognise Phishing Emails</h3>
+              <span class="tip-badge">Phishing</span>
+            </div>
+            <ul>
+              <li>Phishing pretends to be a trusted company to steal your info.</li>
+              <li>Check the sender's actual email address — not just the display name.</li>
+              <li>Do not click links in unexpected emails. Go to the website directly instead.</li>
+              <li>"Your account will be deleted!" — urgent messages are a classic phishing trick.</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="tip-card" style="--tip-color:#ef4444">
+          <div class="tip-icon">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10.29 3.86L1.82 18a2 2 0 001.71 3h16.94a2 2 0 001.71-3L13.71 3.86a2 2 0 00-3.42 0z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>
+          </div>
+          <div class="tip-content">
+            <div class="tip-head">
+              <h3>If Your Account May Be Exposed</h3>
+              <span class="tip-badge">Emergency</span>
+            </div>
+            <ul>
+              <li><strong>Step 1:</strong> Change your password on that website immediately.</li>
+              <li><strong>Step 2:</strong> Change the same password on any other site where you reused it.</li>
+              <li><strong>Step 3:</strong> Check your email for unusual login activity.</li>
+              <li><strong>Step 4:</strong> Enable 2FA on the affected account right away.</li>
+              <li><strong>Step 5:</strong> If banking details were involved, contact your bank.</li>
+            </ul>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Tools -->
+      <div class="tools-card">
+        <h3>🔧 Free Tools We Recommend</h3>
+        <div class="tools-grid">
+          <a href="https://bitwarden.com"        target="_blank" rel="noopener" class="tool-item" style="--tc:#4f8ef7"><strong>Bitwarden</strong><span>Free password manager</span></a>
+          <a href="https://authy.com"            target="_blank" rel="noopener" class="tool-item" style="--tc:#a855f7"><strong>Authy</strong><span>2FA authenticator app</span></a>
+          <a href="https://haveibeenpwned.com"   target="_blank" rel="noopener" class="tool-item" style="--tc:#2dd4bf"><strong>HIBP</strong><span>Another free breach checker</span></a>
+        </div>
+      </div>
+
+      <div style="text-align:center;margin-top:36px">
+        <a href="#home" class="btn btn-primary">⬆ Check My Email Now</a>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ========== LOGIN SECTION ========== -->
+  <section class="login-section" id="login-section">
+    <div class="container" style="max-width:460px">
+      <div class="section-header">
+        <div class="section-icon">
+          <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+        </div>
+        <h2>Account <span class="gradient-text">Login</span></h2>
+        <p>Demo login — no real authentication. Your email goes directly to the breach checker.</p>
+      </div>
+
+      <!-- Toggle tabs -->
+      <div class="tab-toggle">
+        <button class="tab-btn active" id="tabLogin"  onclick="switchTab('login')">Sign In</button>
+        <button class="tab-btn"        id="tabSignup" onclick="switchTab('signup')">Sign Up</button>
+      </div>
+
+      <div class="login-card">
+
+        <!-- SIGN IN PANEL -->
+        <div id="panelLogin">
+          <form onsubmit="handleLogin(event)" style="display:flex;flex-direction:column;gap:18px">
+
+            <div>
+              <label class="field-label">Email Address</label>
+              <div class="input-wrap">
+                <svg class="input-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+                <input type="email" id="loginEmail" class="email-input" placeholder="you@example.com" required />
+              </div>
+            </div>
+
+            <div>
+              <label class="field-label">Password</label>
+              <div class="input-wrap">
+                <svg class="input-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
+                <input type="password" id="loginPass" class="email-input" placeholder="••••••••" style="padding-left:48px" />
+                <button type="button" class="pass-toggle" onclick="togglePass('loginPass',this)" aria-label="Show password">
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg>
+                </button>
+              </div>
+            </div>
+
+            <div class="notice notice-info" style="font-size:0.82rem;padding:10px 14px">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+              LeakLens never asks for your real account password. This login is for demo only.
+            </div>
+
+            <button type="submit" class="btn btn-primary btn-full">Sign In →</button>
+            <p style="text-align:center;font-size:0.84rem;color:var(--text-muted)">Or <a href="#check" style="color:var(--accent-blue)">check email without logging in</a></p>
+          </form>
+        </div>
+
+        <!-- SIGN UP PANEL -->
+        <div id="panelSignup" hidden>
+          <form onsubmit="handleSignup(event)" style="display:flex;flex-direction:column;gap:18px">
+
+            <div>
+              <label class="field-label">Full Name</label>
+              <div class="input-wrap">
+                <svg class="input-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+                <input type="text" id="signupName" class="email-input" placeholder="Your full name" required />
+              </div>
+            </div>
+
+            <div>
+              <label class="field-label">Email Address</label>
+              <div class="input-wrap">
+                <svg class="input-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+                <input type="email" id="signupEmail" class="email-input" placeholder="you@example.com" required />
+              </div>
+            </div>
+
+            <div>
+              <label class="field-label">Password</label>
+              <div class="input-wrap">
+                <svg class="input-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
+                <input type="password" id="signupPass" class="email-input" placeholder="Min. 6 characters" style="padding-left:48px" />
+                <button type="button" class="pass-toggle" onclick="togglePass('signupPass',this)" aria-label="Show password">
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg>
+                </button>
+              </div>
+            </div>
+
+            <button type="submit" class="btn btn-primary btn-full">Create Account →</button>
+          </form>
+        </div>
+
+        <!-- Success flash -->
+        <div id="loginSuccess" hidden style="text-align:center;padding:24px 0">
+          <div class="success-icon">✓</div>
+          <h3 style="margin:12px 0 6px;color:white">Success!</h3>
+          <p style="font-size:0.9rem">Redirecting to breach checker…</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ========== FOOTER ========== -->
+  <footer class="footer">
+    <div class="container footer-inner">
+      <div class="footer-brand">
+        <div class="nav-logo" style="width:32px;height:32px">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+        </div>
+        <span>LeakLens</span>
+      </div>
+      <p class="footer-note">
+        Demo project · No real breach data · Powered by the free
+        <a href="https://xposedornot.com" target="_blank" rel="noopener">XposedOrNot API</a> in a live version.
+        Results in this demo are simulated.
+      </p>
+      <p class="footer-copy">© 2024 LeakLens Demo · Built with plain HTML, CSS &amp; JavaScript</p>
+    </div>
+  </footer>
+
+
+  <script src="script.js"></script>
 </body>
 </html>
