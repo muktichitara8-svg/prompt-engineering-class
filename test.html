@@ -1,0 +1,122 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Online Store</title>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            text-align: center;
+            background: #f5f5f5;
+        }
+
+        header {
+            background: #222;
+            color: white;
+            padding: 25px;
+        }
+
+        nav {
+            background: #444;
+            padding: 12px;
+        }
+
+        nav a {
+            color: white;
+            margin: 15px;
+            text-decoration: none;
+        }
+
+        .products {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            flex-wrap: wrap;
+            padding: 30px;
+        }
+
+        .product {
+            background: white;
+            padding: 20px;
+            width: 200px;
+            border-radius: 10px;
+        }
+
+        button {
+            background: #168a50;
+            color: white;
+            padding: 10px;
+            border: none;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+
+        footer {
+            background: #222;
+            color: white;
+            padding: 15px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <header>
+        <h1>My Online Store</h1>
+        <p>Quality Products, Best Prices!</p>
+    </header>
+
+    <nav>
+        <a href="#home">Home</a>
+        <a href="#products">Products</a>
+        <a href="#contact">Contact</a>
+    </nav>
+
+    <section id="home">
+        <h2>Welcome to Our Store!</h2>
+        <p>Discover amazing products at affordable prices.</p>
+    </section>
+
+    <section id="products">
+        <h2>Our Products</h2>
+
+        <div class="products">
+            <div class="product">
+                <h3>Stylish Bag</h3>
+                <p>Price: ₹499</p>
+                <button onclick="order('Stylish Bag')">
+                    Order Now
+                </button>
+            </div>
+
+            <div class="product">
+                <h3>Smart Watch</h3>
+                <p>Price: ₹999</p>
+                <button onclick="order('Smart Watch')">
+                    Order Now
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact">
+        <h2>Contact Us</h2>
+        <p>Email: mybusiness@example.com</p>
+    </section>
+
+    <footer>
+        <p>© 2026 My Online Store</p>
+    </footer>
+
+    <script>
+        function order(product) {
+            alert("You selected: " + product);
+        }
+    </script>
+
+</body>
+</html>
